@@ -6,7 +6,7 @@ builds:
   -
     # Path to main.go file or main package.
     # Default is `.`.
-    main: ./cmd/checkr/*
+    main: ./cmd/checkr/main.go helpers.go
     # Name template for the binary final name.
     # Default is the name of the project directory.
     binary: checkr
