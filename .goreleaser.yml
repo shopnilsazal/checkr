@@ -6,7 +6,7 @@ builds:
   -
     # Path to main.go file or main package.
     # Default is `.`.
-    main: ./cmd/checkr/main.go
+    main: ./cmd/checkr
     # Name template for the binary final name.
     # Default is the name of the project directory.
     binary: checkr
@@ -39,7 +39,7 @@ brew:
 
   # Repository to push the tap to.
   github:
-    owner: user
+    owner: shopnilsazal
     name: homebrew-tap
 
   # Git author used to commit to the repository.
