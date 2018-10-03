@@ -1,8 +1,20 @@
 # This is an example goreleaser.yaml file with some sane defaults.
 # Make sure to check the documentation at http://goreleaser.com
+project_name: checkr
 builds:
-- env:
-  - CGO_ENABLED=0
+  # You can have multiple builds defined as a yaml list
+  -
+    # Path to main.go file or main package.
+    # Default is `.`.
+    main: ./cmd/checkr/*
+    # Name template for the binary final name.
+    # Default is the name of the project directory.
+    binary: checkr
+    # Custom environment variables to be set during the builds.
+    # Default is empty.
+    env:
+      - CGO_ENABLED=0
+
 archive:
   replacements:
     darwin: Darwin
@@ -20,3 +32,31 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
+brew:
+  # Name template of the recipe
+  # Default to project name
+  name: checkr
+
+  # Repository to push the tap to.
+  github:
+    owner: user
+    name: homebrew-tap
+
+  # Git author used to commit to the repository.
+  # Defaults are shown.
+  commit_author:
+    name: Rafiqul Hasan
+    email: shopnilsazal@gmail.com
+
+  # Folder inside the repository to put the formula.
+  # Default is the root folder.
+  folder: Formula
+
+  # Your app's description.
+  # Default is empty.
+  description: "Check whether a package name is available on different package managers."
+
+release:
+  # You can change the name of the GitHub release.
+  # Default is ``
+  name_template: "{{.ProjectName}}-v{{.Version}} {{.Env.USER}}"
