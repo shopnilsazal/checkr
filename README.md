@@ -5,6 +5,15 @@
 ![Screen Recording](https://raw.githubusercontent.com/shopnilsazal/checkr/master/recording.gif)
 
 
+## Install
+
+```
+$ brew install shopnilsazal/tap/checkr
+```
+
+Or you can download binary from [releases](https://github.com/shopnilsazal/checkr/releases) page.
+
+
 ## Usage
 
 ```
